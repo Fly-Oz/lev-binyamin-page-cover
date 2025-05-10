@@ -4,80 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100%;
-      box-sizing: border-box;
-      overflow: hidden;
-      background: #f6f7fb;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #f6f7fb;
+  }
+  .cover-container {
+    width: 100vw;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    /* Remove border-radius and box-shadow for true edge-to-edge */
+    background: #fff;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .cover-img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+  }
+  .cover-title-ribbon {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    pointer-events: none;
+  }
+  .ribbon {
+    background: #e83d44;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 6px 24px 0 rgba(232,61,68,0.18);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    direction: rtl;
+    min-width: 180px;
+    text-align: right;
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 600px) {
     .cover-container {
-      width: 100vw;
-      height: 280px;
-      max-width: 100vw;
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
-      background: #fff;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-    }
-    .cover-img {
-      width: 100vw;
-      height: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      position: absolute;
-      top: 0; left: 0;
-      z-index: 1;
+      height: 180px;
     }
     .cover-title-ribbon {
-      position: absolute;
-      bottom: 24px;
-      right: 32px;
-      z-index: 2;
-      display: flex;
-      justify-content: flex-end;
-      width: auto;
-      pointer-events: none;
+      right: 8vw;
+      bottom: 18px;
     }
     .ribbon {
-      background: #e83d44;
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 14px 14px 0 0;
-      box-shadow: 0 6px 24px 0 rgba(232,61,68,0.18);
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      direction: rtl;
-      min-width: 180px;
-      text-align: right;
-      pointer-events: auto;
-      position: relative;
-      z-index: 2;
+      font-size: 1.2rem;
+      padding: 10px 12vw;
     }
-    @media (max-width: 600px) {
-      .cover-container {
-        border-radius: 0;
-        height: 180px;
-      }
-      .cover-title-ribbon {
-        right: 8vw;
-        bottom: 18px;
-      }
-      .ribbon {
-        font-size: 1.2rem;
-        padding: 10px 12vw;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="cover-container">
