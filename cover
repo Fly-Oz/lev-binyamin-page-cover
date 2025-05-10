@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      background: #f6f7fb;
+    }
+    .cover-container {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 16 / 7;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+      background: #fff;
+      position: relative;
+      margin: 0 auto;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+    .cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cover-title-ribbon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 0 32px 24px 32px;
+      display: flex;
+      justify-content: flex-end;
+      pointer-events: none;
+    }
+    .ribbon {
+      background: #e83d44;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 14px 14px 0 0;
+      box-shadow: 0 6px 24px 0 rgba(232,61,68,0.18);
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      direction: rtl;
+      min-width: 180px;
+      text-align: right;
+      pointer-events: auto;
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 600px) {
+      .cover-container {
+        max-width: 100vw;
+        aspect-ratio: 16 / 9;
+      }
+      .cover-title-ribbon {
+        padding: 0 8vw 18px 8vw;
+      }
+      .ribbon {
+        font-size: 1.2rem;
+        padding: 10px 12vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cover-container">
+    <img class="cover-img" id="coverImg" src="" alt="Cover Photo">
+    <div class="cover-title-ribbon">
+      <div class="ribbon" id="coverTitle"></div>
+    </div>
+  </div>
+  <script>
+    // Parse query parameters
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+    const imgUrl = getQueryParam('img') || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80';
+    const title = getQueryParam('title') || 'כותרת ברירת מחדל';
+
+    document.getElementById('coverImg').src = imgUrl;
+    document.getElementById('coverTitle').textContent = decodeURIComponent(title);
+  </script>
+</body>
+</html>
